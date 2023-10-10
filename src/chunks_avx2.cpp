@@ -20,7 +20,7 @@
     chunk = _mm256_or_si256(chunk, econv_reg);                      \
   } while (false)
 
-size_t eeenc::process_chunk(size_t len) {
+size_t eeenc::encode_chunk(size_t len) {
   const __m256i all_ones = _mm256_set1_epi8(0xFF);
 
   const __m256i pshufb_reg = _mm256_setr_epi16(

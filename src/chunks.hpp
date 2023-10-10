@@ -13,5 +13,5 @@ namespace eeenc {
   alignas(32) inline char input_data[chunk_len / 8] = {};
   alignas(32) inline char output_data[chunk_len] = {};
   
-  size_t process_chunk(size_t len);
+  size_t encode_chunk(size_t len);
 }
