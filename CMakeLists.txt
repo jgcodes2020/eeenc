@@ -16,7 +16,7 @@ if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "^(AMD64|x86_64)$")
   target_sources(eeenc PUBLIC "src/chunks_avx2.cpp")
   if (${CMAKE_CXX_COMPILER_ID} MATCHES "^(GNU|(Apple)?Clang)$")
     # MSVC auto-enables AVX2, so we only do this on GNU-compatible compilers
-    set_source_files_properties("src/chunks_avx2.cpp" PROPERTIES COMPILE_FLAGS "-mavx2")
+    set_source_files_properties("src/chunks_avx2.cpp" PROPERTIES COMPILE_FLAGS "-mavx2 -mbmi2")
   endif()
 else()
   message(FATAL_ERROR "Unsupported architecture!!")

@@ -10,8 +10,9 @@
 namespace eeenc {
   inline constexpr size_t chunk_len = 65536;
   
-  alignas(32) inline char input_data[chunk_len / 8] = {};
-  alignas(32) inline char output_data[chunk_len] = {};
+  alignas(32) inline char b_data[chunk_len / 8] = {};
+  alignas(32) inline char e_data[chunk_len] = {};
   
   size_t encode_chunk(size_t len);
+  size_t decode_chunk(size_t len);
 }
